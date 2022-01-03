@@ -21,5 +21,6 @@ cloudwatch.put_metric_alarm(
             'Value': 'INSTANCE_ID'  # replace with your instance id
         },
     ],
+    # TODO: Add more dimensions
     Unit='Percent',
 )
