@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@aws-cdk/aws-ec2": "^1.137.0",
+    "@aws-cdk/aws-ecs": "^1.137.0",
+    "@aws-cdk/aws-ecs-patterns": "^1.137.0",
+    "@fluidframework/container-definitions": "^0.43.0"
+  }
+}

@@ -1,8 +1,8 @@
 import ec2 = require('@aws-cdk/aws-ec2');
+import { ContainerDefinition } from '@aws-cdk/aws-ecs';
 import ecs = require('@aws-cdk/aws-ecs');
 import ecs_patterns = require('@aws-cdk/aws-ecs-patterns');
 import cdk = require('@aws-cdk/core');
-import { ContainerDefinition } from './container-definition';
 
 class MyEcsConstructStack extends cdk.Stack {
     constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
@@ -25,6 +25,7 @@ class MyEcsConstructStack extends cdk.Stack {
             memoryLimitMiB: 512,
             cpu: 256
         });
+        
         // Create a service
         const service = new ecs_patterns.ApplicationLoadBalancedFargateService(this, 'Service', {
             cluster: cluster,
@@ -33,8 +34,9 @@ class MyEcsConstructStack extends cdk.Stack {
             publicLoadBalancer: true
         });
     }
-
+    
 }
+
 // snippet-end:[ecs.typescript.createecs]
 const app = new cdk.App();
 new MyEcsConstructStack(app, 'MyEcsConstructStack');
