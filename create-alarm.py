@@ -3,7 +3,6 @@ import boto3
 # Create CloudWatch client
 cloudwatch = boto3.client('cloudwatch')
 
-
 # Create alarm
 cloudwatch.put_metric_alarm(
     AlarmName='Web_Server_CPU_Utilization',
